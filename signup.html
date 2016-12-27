@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+{% block title %}Signup page{% endblock %}
+
+{% block content %}
+
+<div class="container" style="width:500px">
+    <h3 style="margin-top:100px">Sign Up</h3> 
+    <hr>
+    <div class="login-form">
+
+    <form action="" method="post"> {% csrf_token %}
+        <div class="control-group span3" style="width:400px" >
+            {{ form.name.errors }}
+            {{ form.name }}
+            <i class="input-icon fui-user" for="login-name"></i>
+    </div>
+
+    <div class="control-group span3" style="width:400px" >
+        {{ form.email.errors }}
+        {{ form.email }}
+        <i class="input-icon fui-mail" for="login-name"></i>
+    </div>
+
+    <div class="control-group span3" style="width:400px">
+        {{ form.pass1.errors }}
+        {{ forms.pass2 }}
+        <i class="input-icon fui-lock" for="login-pass"></i>
+    </div>
+
+
+    <div class="control-group span3" style="width:400px">
+        {{ form.pass2.errors }}
+        {{ forms.pass2 }}
+        <i class="input-icon fui-lock" for="login-pass"></i>
+    </div>
+
+    <div style="text-align:center"> 
+        <input type="submit" class="btn btn-hg btn-primary btn-wide" value="Sign Up">
+        <!--<a class="login-link" href="#">Lost your password ?</a> -->
+    </div>
+</form>
+
+</div><!-- /login-form -->
+
+</div> <!-- /container -->
+
+
+{% endblock content %}
